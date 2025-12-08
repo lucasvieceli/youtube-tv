@@ -414,7 +414,6 @@ export default function Home() {
       const nextChannels = [...channels, { id: payload.channelId, label }];
       setChannels(nextChannels);
       setChannelUrlInput("");
-      setChannelIdInput("");
       setChannelLabelInput("");
       setStatus("Canal adicionado com sucesso.");
     } catch (err) {
@@ -1053,22 +1052,18 @@ export default function Home() {
                     )}
                     {layoutMode === "ticker" && (
                       <div
-                        className={`absolute left-0 right-0 ${
-                          tickerPosition === "top" ? "top-0" : "bottom-0"
-                        }`}
-                      >
-                        <TickerBar
-                          text={tickerText}
-                          fontSize={tickerFontSize}
-                          speedSeconds={tickerSpeed}
-                          bgColor={tickerBg}
-                          textColor={tickerColor}
-                          fontSize={tickerFontForView}
-                          speedSeconds={tickerSpeed}
-                          bgColor={tickerBg}
-                          textColor={tickerColor}
-                        />
-                      </div>
+                      className={`absolute left-0 right-0 ${
+                        tickerPosition === "top" ? "top-0" : "bottom-0"
+                      }`}
+                    >
+                      <TickerBar
+                        text={tickerText}
+                        fontSize={tickerFontForView}
+                        speedSeconds={tickerSpeed}
+                        bgColor={tickerBg}
+                        textColor={tickerColor}
+                      />
+                    </div>
                     )}
                   </div>
                   {!isFullscreen && (
