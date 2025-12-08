@@ -31,8 +31,8 @@ jobs:
       - name: Install
         run: npm ci
 
-      - name: Build and export
-        run: npm run export
+      - name: Build (static export)
+        run: npm run build
         env:
           NEXT_PUBLIC_BASE_PATH: "/${{ github.event.repository.name }}"
 
